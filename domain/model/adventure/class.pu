@@ -1,0 +1,59 @@
+@startuml
+title アドベンチャーゲームクラス図
+
+class Character {
+  -WeaponBehavior: Weapon
+  +fight()
+  +setWeapont(weapon: Weapon)
+}
+
+Character <|-- Queen
+Character <|-- King
+Character <|-- Knight
+Character <|-- Troll
+
+
+class Queen {
+  +fight()
+}
+
+class King {
+  +fignt()
+}
+
+class Knight {
+  +fight()
+}
+
+class Troll {
+  +fight()
+}
+
+WeaponBehavior <|-- Character
+
+WeaponBehavior <|..KnifeBehavior
+WeaponBehavior <|..BowAndAllowBehavior
+WeaponBehavior <|..AxeBehavior
+WeaponBehavior <|..SwordBehavior
+
+interface WeaponBehavior {
+  +useWeapon()
+}
+
+class KnifeBehavior {
+  +useWeapon()
+}
+
+class BowAndAllowBehavior {
+  +useWeapon()
+}
+
+class AxeBehavior {
+  +useWeapon()
+}
+
+class SwordBehavior {
+  +useWeapon()
+}
+
+@enduml
