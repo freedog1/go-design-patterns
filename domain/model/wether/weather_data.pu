@@ -1,0 +1,56 @@
+@startuml
+title WeatherData クラス図
+
+interface Subject {
+  +registObserver()
+  +removeObserver()
+  +notifyObservers()
+}
+
+Subject <|.. WeatherData
+
+class WeatherData {
+  +registObserver()
+  +removeObserver()
+  +notifyObservers()
+
+  +getTemperture()
+  +getHumidity()
+  +getPressure()
+  +measurementsChanged() ?
+}
+
+Observer <|-- Subject
+
+interface Observer {
+  update()
+}
+
+interface DisplayElement {
+  display()
+}
+
+class CurrentConditionsDisplay {
+  update()
+  display()
+}
+
+class SttatisticsDisplay {
+  update()
+  display()
+}
+
+class ForecastDisplay {
+  update()
+  display()
+}
+
+Observer <|.. CurrentConditionsDisplay
+Observer <|.. SttatisticsDisplay
+Observer <|.. ForecastDisplay
+
+DisplayElement <|.. CurrentConditionsDisplay
+DisplayElement <|.. SttatisticsDisplay
+DisplayElement <|.. ForecastDisplay
+
+@enduml
