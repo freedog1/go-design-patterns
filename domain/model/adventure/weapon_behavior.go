@@ -7,7 +7,6 @@ type WeaponBehavior interface {
 }
 
 type KnifeBehavior struct {
-	WeapontBehavior *WeaponBehavior
 }
 
 func (b *KnifeBehavior) useWeapon() {
@@ -15,7 +14,6 @@ func (b *KnifeBehavior) useWeapon() {
 }
 
 type BowAndAllowBehavior struct {
-	WeapontBehavior *WeaponBehavior
 }
 
 func (b *BowAndAllowBehavior) useWeapon() {
@@ -23,7 +21,6 @@ func (b *BowAndAllowBehavior) useWeapon() {
 }
 
 type AxeBehavior struct {
-	WeapontBehavior *WeaponBehavior
 }
 
 func (b *AxeBehavior) useWeapon() {
@@ -31,7 +28,6 @@ func (b *AxeBehavior) useWeapon() {
 }
 
 type SwordBehavior struct {
-	WeapontBehavior *WeaponBehavior
 }
 
 func (b *SwordBehavior) useWeapon() {

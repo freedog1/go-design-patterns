@@ -7,7 +7,6 @@ type FlyBehavior interface {
 }
 
 type FlyWithWings struct {
-	FlyBehavior *FlyBehavior
 }
 
 func (f *FlyWithWings) fly() {
@@ -15,7 +14,6 @@ func (f *FlyWithWings) fly() {
 }
 
 type FlyNoWay struct {
-	FlyBehavior *FlyBehavior
 }
 
 func (f *FlyNoWay) fly() {
@@ -23,7 +21,6 @@ func (f *FlyNoWay) fly() {
 }
 
 type FlyRocketPowered struct {
-	FlyBehavior *FlyBehavior
 }
 
 func (f *FlyRocketPowered) fly() {

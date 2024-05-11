@@ -7,7 +7,6 @@ type QuackBehavior interface {
 }
 
 type Quack struct {
-	QuackBehavior *QuackBehavior
 }
 
 func (q *Quack) quack() {
@@ -15,7 +14,6 @@ func (q *Quack) quack() {
 }
 
 type MuteQuack struct {
-	QuackBehavior *QuackBehavior
 }
 
 func (q *MuteQuack) quack() {
