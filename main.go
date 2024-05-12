@@ -3,12 +3,14 @@ package main
 import (
 	"design-pattern/domain/model/adventure"
 	"design-pattern/domain/model/duck"
+	"design-pattern/domain/model/weather"
 	"fmt"
 )
 
 func main() {
-	simulateDuck()
-	simulateKing()
+	// simulateDuck()
+	// simulateKing()
+	simulateWeather()
 }
 
 func simulateDuck() {
@@ -30,4 +32,11 @@ func simulateKing() {
 	fmt.Println("武器を変えて攻撃")
 	king.Character.SetWeapon(&adventure.AxeBehavior{})
 	king.Character.UseWeapon()
+}
+
+func simulateWeather() {
+	weatherData := weather.NewWeatherData()
+	weatherData.RegistObserver(weather.NewCurrentConditionsDisplay())
+	weatherData.SetMessurement(10,20,30)
+	weatherData.SetMessurement(100,200,300)
 }
