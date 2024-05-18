@@ -3,6 +3,7 @@ package main
 import (
 	"design-pattern/domain/model/adventure"
 	"design-pattern/domain/model/duck"
+	"design-pattern/domain/model/starbuz"
 	"design-pattern/domain/model/weather"
 	"fmt"
 )
@@ -10,7 +11,8 @@ import (
 func main() {
 	// simulateDuck()
 	// simulateKing()
-	simulateWeather()
+	// simulateWeather()
+	simulateStarbuz()
 }
 
 func simulateDuck() {
@@ -39,4 +41,13 @@ func simulateWeather() {
 	weatherData.RegistObserver(weather.NewCurrentConditionsDisplay())
 	weatherData.SetMessurement(10,20,30)
 	weatherData.SetMessurement(100,200,300)
+}
+
+func simulateStarbuz() {
+	espresso := starbuz.NewEspresso()
+	fmt.Printf("%s: %.2f\n", espresso.GetDescription(), espresso.Cost())
+	mocha := starbuz.NewMohca(espresso)
+	fmt.Printf("%s: %.2f\n", mocha.GetDescription(), mocha.Cost())
+	whipMocha := starbuz.NewWipe(mocha)
+	fmt.Printf("%s: %.2f\n", whipMocha.GetDescription(), whipMocha.Cost())
 }
